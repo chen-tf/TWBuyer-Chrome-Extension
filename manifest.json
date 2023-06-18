@@ -1,0 +1,16 @@
+{
+  "name": "TWBuyer Extensions",
+  "description": "支援 PChome, MOMO, Yahoo 購物中心歷史比價",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "pricing.html",
+    "default_icon": "dollar.png"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*/"
+  ]
+}
