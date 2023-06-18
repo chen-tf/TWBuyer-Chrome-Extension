@@ -1,8 +1,10 @@
-console.log('This is a popup!');
-
-async function getCurrentTabUrl () {
+async function loadTWBuyerContent () {
   let queryOptions = { active: true, lastFocusedWindow: true };
   let [ tab ] = await chrome.tabs.query(queryOptions);
+
+  if (!isSupportedHost(tab.url)) {
+    return
+  }
 
   const settings = {
     "url": "https://search.twbuyer.info/querybyurl",
@@ -20,8 +22,18 @@ async function getCurrentTabUrl () {
 
   $.ajax(settings).done(function (response) {
     const iframe = document.getElementById('twBuyerIframe');
-    iframe.src = "https://twbuyer.info/ec_item/" + response.ID
+    if ('ID' in response) {
+      iframe.src = "https://twbuyer.info/ec_item/" + response.ID
+    } else {
+      iframe.src = ''
+    }
   });
 }
 
-window.addEventListener("DOMContentLoaded", getCurrentTabUrl)
+const supportedDomains = [ "www.momoshop.com.tw", "24h.pchome.com.tw", "tw.buy.yahoo.com" ];
+
+function isSupportedHost (urlString) {
+  return supportedDomains.includes(new URL(urlString).hostname);
+}
+
+window.addEventListener("DOMContentLoaded", loadTWBuyerContent)
