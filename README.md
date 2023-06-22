@@ -1,7 +1,11 @@
 # TWBuyer-Chrome-Extension
 支援 PChome, MOMO, Yahoo 購物中心歷史查價插件
 
-# 使用教學
+# Chrome Web Store
+下載連結
+https://chrome.google.com/webstore/detail/twbuyer-extensions/gnnkmmhajeimljighmedfinbboaiofbi
+
+# 本地安裝教學
 ### 開啟 chrome 右上角三個點點的『設定』，點 『擴充功能』-> 『管理擴充功能』
 <img width="694" alt="image" src="https://github.com/chen-tf/TWBuyer-Chrome-Extension/assets/88727350/4229fe09-5155-4e28-beb4-05bf5e7c16d3">
 
